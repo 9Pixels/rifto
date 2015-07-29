@@ -64,31 +64,31 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 	        endif;
 			/* name */
 			if(trim($_POST['myname']) === ''):
-				$nameError = __('* Please enter your name.','zerif-lite');
+				$nameError = __('* Please enter your name.','rifto');
 				$hasError = true;
 			else:
 				$name = trim($_POST['myname']);
 			endif;
 			/* email */
 			if(trim($_POST['myemail']) === ''):
-				$emailError = __('* Please enter your email address.','zerif-lite');
+				$emailError = __('* Please enter your email address.','rifto');
 				$hasError = true;
 			elseif (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['myemail']))) :
-				$emailError = __('* You entered an invalid email address.','zerif-lite');
+				$emailError = __('* You entered an invalid email address.','rifto');
 				$hasError = true;
 			else:
 				$email = trim($_POST['myemail']);
 			endif;
 			/* subject */
 			if(trim($_POST['mysubject']) === ''):
-				$subjectError = __('* Please enter a subject.','zerif-lite');
+				$subjectError = __('* Please enter a subject.','rifto');
 				$hasError = true;
 			else:
 				$subject = trim($_POST['mysubject']);
 			endif;
 			/* message */
 			if(trim($_POST['mymessage']) === ''):
-				$messageError = __('* Please enter a message.','zerif-lite');
+				$messageError = __('* Please enter a message.','rifto');
 				$hasError = true;
 			else:
 				$message = stripslashes(trim($_POST['mymessage']));
@@ -142,20 +142,24 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 	/* RIBBON WITH BOTTOM BUTTON */
 	include get_template_directory() . "/sections/ribbon_with_bottom_button.php";
 	/* ABOUT US */
+	/*
 	$zerif_aboutus_show = get_theme_mod('zerif_aboutus_show');
 	if( isset($zerif_aboutus_show) && $zerif_aboutus_show != 1 ):
 		include get_template_directory() . "/sections/about_us.php";
 	endif;
+	*/
 	/* OUR TEAM */
 	$zerif_ourteam_show = get_theme_mod('zerif_ourteam_show');
 	if( isset($zerif_ourteam_show) && $zerif_ourteam_show != 1 ):
 		include get_template_directory() . "/sections/our_team.php";
 	endif;
 	/* TESTIMONIALS */
+	/*
 	$zerif_testimonials_show = get_theme_mod('zerif_testimonials_show');
 	if( isset($zerif_testimonials_show) && $zerif_testimonials_show != 1 ):
 		include get_template_directory() . "/sections/testimonials.php";
 	endif;
+	*/
 	/* RIBBON WITH RIGHT SIDE BUTTON */
 	include get_template_directory() . "/sections/ribbon_with_right_button.php";
 	/* LATEST NEWS */
@@ -192,9 +196,9 @@ if ( get_option( 'show_on_front' ) == 'page' ) {
 
 					<?php
 						if(isset($emailSent) && $emailSent == true) :
-							echo '<div class="notification success"><p>'.__('Thanks, your email was sent successfully!','zerif-lite').'</p></div>';
+							echo '<div class="notification success"><p>'.__('Thanks, your email was sent successfully!','rifto').'</p></div>';
 						elseif(isset($_POST['submitted'])):
-							echo '<div class="notification error"><p>'.__('Sorry, an error occured.','zerif-lite').'</p></div>';
+							echo '<div class="notification error"><p>'.__('Sorry, an error occured.','rifto').'</p></div>';
 						endif;
 						if(isset($nameError) && $nameError != '') :
 							echo '<div class="notification error"><p>'.esc_html($nameError).'</p></div>';

@@ -10,3 +10,59 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:
 Text Domain: rifto
 */
+
+.top-header {
+	width: 100%;
+	padding: 45px 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.top-header.fixed {
+	background: #404040;
+	padding: 30px 0;
+	position: fixed;
+	top: 30px;
+}
+
+.top-header .header-logo {
+	width: 200px;
+	height: 32px;
+	display: block;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-ms-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	float: left;
+}
+
+.top-header .header-navigation {
+	text-align: left;
+	float: right;
+}
+
+.top-header .header-navigation ul {
+	list-style-type: none;
+}
+
+.top-header .header-navigation ul li {
+	margin-right: 20px;
+	float: left;
+}
+
+.top-header .header-navigation ul li:last-child {
+	margin-right: 0;
+}
+
+.top-header .header-navigation ul li a {
+	color: #fff;
+}
+
+.top-header .header-navigation ul li a:hover {
+	text-decoration: none;
+}

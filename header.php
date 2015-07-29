@@ -11,7 +11,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <!--[if lt IE 9]>
@@ -46,13 +45,13 @@ endif;
 		<div class="container">
 			<div class="navbar-header responsive-logo">
 				<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-				<span class="sr-only"><?php _e('Toggle navigation','zerif-lite'); ?></span>
+				<span class="sr-only"><?php _e('Toggle navigation','rifto'); ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				</button>
 				<?php
-				$zerif_logo = get_theme_mod('zerif_logo');
+				$zerif_logo = get_theme_mod( 'zerif_logo' );
 				if(isset($zerif_logo) && $zerif_logo != ""):
 					echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand">';
 						echo '<img src="'.$zerif_logo.'" alt="'.get_bloginfo('title').'">';
@@ -79,3 +78,24 @@ endif;
 	</div>
 	*/
 	?>
+	<div class="top-header">
+		<div class="container">
+			<a class="header-logo" href="<?php echo esc_url( home_url() ); ?>" title="<?php bloginfo( 'name' ); ?>">
+			</a><!--/.header-logo-->
+			<nav class="header-navigation">
+				<?php
+				$wp_nav_menu_args = array(
+					'theme_location'	=> 'primary',
+					'menu'				=> '',
+					'container'			=> '',
+					'container_class'	=> '',
+					'container_id'		=> '',
+					'menu_class'		=> '',
+					'menu_id'			=> ''
+				);
+
+				wp_nav_menu( $wp_nav_menu_args );
+				?>
+			</nav><!--/.header-navigation-->
+		</div><!--/.container-->
+	</div><!--/.top-header-->

@@ -1,3 +1,17 @@
+/**
+ *  jQuery Ready
+ */
+jQuery( document ).ready( function($) {
+  var topHeaderHeight = $( '.top-header' ).height();
+  $( window ).scroll( function() {
+    var scrollTop = $( window ).scrollTop();
+    if( scrollTop >= topHeaderHeight ) {
+      $( '.top-header' ).addClass( 'fixed' );
+    } else {
+      $( '.top-header' ).removeClass( 'fixed' );
+    }
+  });
+});
 /* =================================
    LOADER                     
 =================================== */
@@ -186,7 +200,7 @@ jQuery(document).ready(function(){
 });
 
 /* TOP NAVIGATION MENU SELECTED ITEMS */
-
+/*
 function scrolled() {
     jQuery(this).off('scroll')[0].setTimeout(function(){
 
@@ -218,7 +232,7 @@ function scrolled() {
     }, 500)
 }
 jQuery(window).on('scroll',scrolled);
-
+*/
 
 /* ================================
 ===  PARALLAX                  ====
